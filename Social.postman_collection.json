@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "09f2434b-d867-4263-87b7-d1463d0ed5e3",
+		"name": "Social",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19115357"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Mister\",\n\t\"second_name\": \"Nikita\",\n\t\"birthdate\": \"01.01.1996\",\n\t\"sex\": \"male\",\n\t\"biography\": \"Good boy\",\n\t\"city\": \"Moscow\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjA1NDUwNzcsImlhdCI6MTcyMDUwMTg3NywidXNlcl9pZCI6IjFlZTk1MWQwLTQwNWUtNDIzMC05YTE5LTUyZDY4MzU0MjVjNCJ9.uWyFggWm1bp-Gu3KW0WrPwHMlZBCIwX-uy-Gow7HoBo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/get/1ee951d0-405e-4230-9a19-52d6835425c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"get",
+						"1ee951d0-405e-4230-9a19-52d6835425c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1ee951d0-405e-4230-9a19-52d6835425c4\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

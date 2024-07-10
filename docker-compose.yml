@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  social:
+    build: ./
+    command: ./wait-for-postgres.sh db ./social
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_PASSWORD=password
+  
+  db:
+    restart: always
+    image: postgres:16
+    ports:
+      - 5436:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=social
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+    driver_opts:
+      type: none
+      device: ./db_data
+      o: bind
+  

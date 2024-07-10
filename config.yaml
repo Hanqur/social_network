@@ -1,0 +1,13 @@
+database:
+  host: db
+  port: 5432
+  username: postgres
+  password: password
+  database_name: social
+
+http_server:
+  host: ""
+  port: 8080
+  read_timeout: 3
+  write_timeout: 3
+  shutdown_timeout: 3
